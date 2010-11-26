@@ -2,11 +2,11 @@
 
 ##
 # tests
-# application used for creating new tests directories
+# application used for creating new poc directories
 ##
 
 MIN_ARGS=1
-TESTS_DIR=~/tests/
+POC_DIR=~/tests/
 
 if [[ $# -lt $MIN_ARGS ]]; then
 	echo "Usage:"
@@ -25,27 +25,27 @@ ACTION=$1;shift
 case $ACTION in
 	create )
 		PROJECT_NAME=$1;shift
-		mkdir ${TESTS_DIR}/$PROJECT_NAME
+		mkdir ${POC_DIR}/$PROJECT_NAME
 		for file in $@
 		do
-			touch ${TESTS_DIR}/$PROJECT_NAME/${file}
+			touch ${POC_DIR}/$PROJECT_NAME/${file}
 		done
 		
-		cd ${TESTS_DIR}/$PROJECT_NAME
+		cd ${POC_DIR}/$PROJECT_NAME
 		git init
 		git add *
 		git commit -m "initial import"
 		;;
 		
 	mate )
-		cd ${TESTS_DIR}/${PROJECT_NAME}
+		cd ${POC_DIR}/${PROJECT_NAME}
 		mate .
 		;;
 	go )
-		cd ${TESTS_DIR}/${PROJECT_NAME}
+		cd ${POC_DIR}/${PROJECT_NAME}
 		;;
 	list )
-		ls $@ ${TESTS_DIR}
+		ls $@ ${POC_DIR}
 		;;
 	* )
 		echo "Unknown action: $ACTION"
