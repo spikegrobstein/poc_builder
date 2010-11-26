@@ -6,7 +6,11 @@
 ##
 
 MIN_ARGS=1
-POC_DIR=~/tests/
+
+# check to see if POC_DIR is initialized, if not, this is the default value
+if [[ -z $POC_DIR ]]; then
+	POC_DIR=~/tests/
+fi
 
 if [[ $# -lt $MIN_ARGS ]]; then
 	echo "Usage:"
