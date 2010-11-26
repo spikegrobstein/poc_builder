@@ -12,10 +12,12 @@ if [[ -z $POC_DIR ]]; then
 	POC_DIR=~/tests/
 fi
 
+# check the POC_EDITOR var to see if it was overridden or not
 if [[ -z $POC_EDITOR ]]; then
 	POC_EDITOR=mate
 fi
 
+# check the minimum arguments, if wrong, show usage
 if [[ $# -lt $MIN_ARGS ]]; then
 	echo "Usage:"
 	echo "  $0 <action> <project_name> [ <param> ... ]"
@@ -38,6 +40,7 @@ if [[ ! -e $POC_DIR ]]; then
 	mkdir $POC_DIR
 fi
 
+# if a project was specified, grab it and set PROJECT_NAME
 if [[ $# -gt 0 ]]; then
 	PROJECT_NAME=$1;shift
 fi
