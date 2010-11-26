@@ -15,7 +15,7 @@ POC Builder is written by Spike Grobstein (spikegrobstein@mac.com ; http://spike
 Available actions:
 
  * `create`: creates a new POC project and initializes as a new git repository. params are files that are to be created in that directory; they will be added to the git repo and committed as part of the initial import.
- * `mate`: open the specified project in textmate. params are ignored.
+ * `edit`: open the specified project in POC_EDITOR (defaults to `mate`). params are ignored.
  * `go`: cd to the specified project directory. params are ignored.
  * `list`: list all available POC projects in the projects directory. params are passed as options to the `ls` command.
  
@@ -32,6 +32,7 @@ and then you can call `poc` directly from the commandline.
 The following environment variables will affect behavior of POC Builder
 
  * `POC_DIR`: the directory for your POCs
+ * `POC_EDITOR`: the editor for the edit command
  
 ## Examples
 
@@ -63,6 +64,6 @@ This will cd into an existing project directory
 
 ### Open a project in textmate
 
-    poc mate python_open_file
+    poc edit python_open_file
     
-This will open the existing POC project `python_open_file` in textmate.
+This will open the existing POC project `python_open_file` in `POC_EDITOR`.
