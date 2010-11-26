@@ -12,13 +12,17 @@ if [[ -z $POC_DIR ]]; then
 	POC_DIR=~/tests/
 fi
 
+if [[ -z $POC_EDITOR ]]; then
+	POC_EDITOR=mate
+fi
+
 if [[ $# -lt $MIN_ARGS ]]; then
 	echo "Usage:"
 	echo "  $0 <action> <project_name> [ <param> ... ]"
 	echo ""
 	echo "Actions:"
 	echo "  create -- create new project; touch specified files"
-	echo "  mate   -- open specified project in textmate; no file params"
+	echo "  edit   -- open specified project in editor. no file params"
 	echo "  go     -- cd to project direcotry; no params"
 	echo "  list   -- list projects; takes ls params as a param"
 	echo ""
@@ -34,9 +38,12 @@ if [[ ! -e $POC_DIR ]]; then
 	mkdir $POC_DIR
 fi
 
+if [[ $# -gt 0 ]]; then
+	PROJECT_NAME=$1;shift
+fi
+
 case $ACTION in
 	create )
-		PROJECT_NAME=$1;shift
 		mkdir ${POC_DIR}/$PROJECT_NAME
 		for file in $@
 		do
@@ -49,9 +56,10 @@ case $ACTION in
 		git commit -m "initial import"
 		;;
 		
-	mate )
+	edit )
 		cd ${POC_DIR}/${PROJECT_NAME}
-		mate .
+		echo "cd'ing to ${POC_DIR}/${PROJECT_NAME}"
+		$POC_EDITOR .
 		;;
 	go )
 		cd ${POC_DIR}/${PROJECT_NAME}
