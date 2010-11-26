@@ -18,6 +18,7 @@ if [[ $# -lt $MIN_ARGS ]]; then
 	echo "  go     -- cd to project direcotry; no params"
 	echo "  list   -- list projects; takes ls params as a param"
 	echo ""
+	return
 fi
 
 ACTION=$1;shift
