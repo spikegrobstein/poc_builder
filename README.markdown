@@ -28,6 +28,10 @@ Since always typing the dot and full path can be a pain, you can alias it in you
     alias poc=". path/to/poc"
     
 and then you can call `poc` directly from the commandline.
+
+The following environment variables will affect behavior of POC Builder
+
+ * `POC_DIR`: the directory for your POCs
  
 ## Examples
 
