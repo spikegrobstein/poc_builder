@@ -38,32 +38,33 @@ The following environment variables will affect behavior of POC Builder
 
 ### Get a list of all POC Projects
 
+This will list all projects using your default `ls` options:
+
     poc list
     
-This will list all projects using your default `ls` options
+This will list all POC projects and their contents in list form:
 
     poc list -Rl
-    
-This will list all POC projects and their contents in list form
-    
+      
 ### Create a new POC Project
 
+This will create a new project directory called `python_open_file` and initialize a fresh git repository:
+
     poc create python_open_file
-    
-This will create a new project directory called `python_open_file` and initialize a fresh git repository.
+
+This will create a new project directory called `python_open_file`, create 2 empty files called `open_file.py` and `README`, create a fresh git repository, add those files to the repository and commit:
 
     poc create python_open_file open_file.py README
     
-This will create a new project directory called `python_open_file`, create 2 empty files called `open_file.py` and `README`, create a fresh git repository, add those files to the repository and commit
-
 ### Go to an existing project
+
+This will cd into an existing project directory:
 
     poc go python_open_file
     
-This will cd into an existing project directory
-
 ### Open a project in textmate
+
+This will open the existing POC project `python_open_file` in `POC_EDITOR`:
 
     poc edit python_open_file
     
-This will open the existing POC project `python_open_file` in `POC_EDITOR`.
