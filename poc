@@ -12,13 +12,13 @@
 MIN_ARGS=1
 
 # check to see if POC_DIR is initialized, if not, this is the default value
-if [[ -z $POC_DIR ]]; then
-	POC_DIR=~/poc/
+if [[ -z "$POC_DIR" ]]; then
+	POC_DIR="~/poc/"
 fi
 
 # check the POC_EDITOR var to see if it was overridden or not
 if [[ -z $POC_EDITOR ]]; then
-	POC_EDITOR=mate
+	POC_EDITOR="mate"
 fi
 
 # check the minimum arguments, if wrong, show usage
@@ -38,7 +38,7 @@ fi
 ACTION=$1;shift
 
 # first check to make sure that the POC directory exists. if not, create it
-if [[ ! -e $POC_DIR ]]; then
+if [[ ! -e "$POC_DIR" ]]; then
 	echo "POC directory does not exist, creating ($POC_DIR)"
 	echo ""
 	mkdir -p "$POC_DIR"
