@@ -23,16 +23,19 @@ POC Builder will attempt to `cd` into the project's directory when working with 
 
     . path/to/poc create some_project
     
-Since always typing the dot and full path can be a pain, you can alias it in your `.bashrc` file:
-
-    alias poc=". path/to/poc"
-    
-and then you can call `poc` directly from the commandline.
-
 The following environment variables will affect behavior of POC Builder
 
  * `POC_DIR`: the directory for your POCs
  * `POC_EDITOR`: the editor for the edit command
+    
+Since always typing the dot and full path can be a pain, you can alias it in your `.bashrc` file. This is also a good place to configure its environment variables for custom installs:
+
+    export POC_DIR="~/projects/poc"
+    export POC_EDITOR="mate"
+    
+    alias poc=". path/to/poc"
+    
+and then you can call `poc` directly from the commandline.
  
 ## Examples
 
