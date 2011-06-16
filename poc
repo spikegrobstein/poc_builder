@@ -1,8 +1,12 @@
 #! /bin/bash
 
 ##
-# tests
+# poc builder
 # application used for creating new poc directories
+# 
+# Spike Grobstein
+# spikegrobstein@mac.com
+# http://spike.grobste.in
 ##
 
 MIN_ARGS=1
