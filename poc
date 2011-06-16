@@ -41,7 +41,7 @@ ACTION=$1;shift
 if [[ ! -e $POC_DIR ]]; then
 	echo "POC directory does not exist, creating ($POC_DIR)"
 	echo ""
-	mkdir $POC_DIR
+	mkdir -p $POC_DIR
 fi
 
 # if a project was specified, grab it and set PROJECT_NAME
@@ -51,7 +51,7 @@ fi
 
 case $ACTION in
 	create )
-		mkdir ${POC_DIR}/$PROJECT_NAME
+		mkdir -p ${POC_DIR}/$PROJECT_NAME
 		for file in $@
 		do
 			touch ${POC_DIR}/$PROJECT_NAME/${file}
